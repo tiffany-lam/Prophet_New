@@ -38,6 +38,7 @@ public class GPS extends AppCompatActivity implements LocationListener {
         setContentView(R.layout.main_menu);
 
         getLocation();
+        msg("WE got something! \nLat=" + lat + "\nlon=" + lon + "\ntime=" + time);
 
     }
 

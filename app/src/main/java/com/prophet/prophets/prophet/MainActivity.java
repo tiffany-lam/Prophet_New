@@ -7,6 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,6 +31,25 @@ public class MainActivity extends AppCompatActivity {
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, GPS.class);
+                startActivity(i);
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("message2");
+
+
+                DatabaseReference usersRef = myRef.child("users2");
+
+                Map<String, Profile> users = new HashMap<String, Profile>();
+
+                //public Profile(int DBID, String name, String familyMembers, String skills, String locations){
+                users.put("PazIsDBest34", new Profile(69, "PAZ", "Apple, Celery, Corrots", "Farmer, Koisher, Doctor, Nurse", "1345.11, 1334,43"));
+                users.put("Tiffanny34", new Profile(68, "Tiff", "HP, Iphone", "Green, Yellow, Red", "133.32, 189.23"));
+
+                usersRef.setValue(users);
+                //myRef.setValue("Hello, World!");
+                //myRef.child("Hello", "apple");
+
                 msg("You have pressed Log In!");
 
             }
@@ -60,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void msg(String x)
     {
-        Toast.makeText(MainActivity.this, x, Toast.LENGTH_SHORT);
+        Toast.makeText(MainActivity.this, x, Toast.LENGTH_SHORT).show();
 
     }
 }
