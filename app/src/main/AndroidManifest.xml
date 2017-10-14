@@ -16,10 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu"></activity>
-        <activity android:name=".Medical"></activity>
-        <activity android:name=".QuickTips"></activity>
-        <activity android:name=".QuickTips2"></activity>
+        <activity android:name=".MainMenu"
+           ></activity>
+        <activity android:name=".Medical"
+            android:parentActivityName=".QuickTips2"></activity>
+        <activity android:name=".QuickTips"
+            android:parentActivityName=".MainMenu"></activity>
+        <activity android:name=".QuickTips2"
+            android:parentActivityName=".QuickTips2"></activity>
         <activity android:name=".RegisterActivity"></activity>
     </application>
 
