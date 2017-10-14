@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/volunteerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="How medically qualified are you?">
+
+    </TextView>
+
+    <RadioGroup
+    android:id="@+id/radioQuestion1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/radioVery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Very - I am medically licensed" />
+
+    <RadioButton
+        android:id="@+id/radioMost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most - I know a fair amount of medical assistance (CPR, treating wounds ect)" />
+
+    <RadioButton
+        android:id="@+id/radioSome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some - I can do mouth to mouth, but I don't know much about medical procedures " />
+    <RadioButton
+        android:id="@+id/radioNone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="None." />
+
+    </RadioGroup>
+    <TextView
+    android:id="@+id/preferance"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:ems="10"
+    android:hint="What do you prefer?">
+
+</TextView>
+
+    <RadioGroup
+        android:id="@+id/radioQuestion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioPatients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Working with patients" />
+
+        <RadioButton
+            android:id="@+id/radioSupplies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carrying supplies" />
+
+        <RadioButton
+            android:id="@+id/radioRescue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Looking for people lost " />
+        <RadioButton
+            android:id="@+id/radioAny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I have no preferance" />
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/limitations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Do you have any physical limitations (ie. can't carry heavy things, back pain, ect)?">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radioQuestion3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioYa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/radioNah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/classes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Have you taken ANY medical classes (CPR, drawing blood, ect)?">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radioQuestion4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioYas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/radioNope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No" />
+    </RadioGroup>
+</LinearLayout>
