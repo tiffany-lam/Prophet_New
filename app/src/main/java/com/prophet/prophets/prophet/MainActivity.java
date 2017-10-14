@@ -43,16 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*
+
                 Intent i = new Intent(MainActivity.this, MainMenu.class);
                 Bundle send = new Bundle();
-                send.putLong("id", dbid);
-                send.putString("naam", CompanyNaam);
-                Intent intent = new Intent(this, NotificationReceiver.class);
-                intent.putExtras(send);
+                send.putInt("viewType",1);
+                i.putExtras(send);
                 startActivity(i);
 
-*/
+
             }
         });
 
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void msg(String x)
     {
-        Toast.makeText(MainActivity.this, x, Toast.LENGTH_SHORT);
+        Toast.makeText(MainActivity.this,"Paz" + x, Toast.LENGTH_SHORT).show();
 
     }
 }
