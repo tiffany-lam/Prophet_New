@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,15 +22,39 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu"
+            android:screenOrientation="portrait"
            ></activity>
+
         <activity android:name=".Medical"
-            android:parentActivityName=".QuickTips2"></activity>
+            android:parentActivityName=".QuickTips2"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".QuickTips"
-            android:parentActivityName=".MainMenu"></activity>
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".QuickTips2"
-            android:parentActivityName=".QuickTips2"></activity>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name="GPS"></activity>
+            android:parentActivityName=".QuickTips2"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".RegisterActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".GPS">
+        </activity>
+
+
+        <activity android:name=".GetHelp"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".Zombie"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

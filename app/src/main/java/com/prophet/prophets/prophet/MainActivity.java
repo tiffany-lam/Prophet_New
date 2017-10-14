@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, GPS.class);
+                Intent i = new Intent(MainActivity.this, MainMenu.class);
                 startActivity(i);
                 // Write a message to the database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(i);
-                RegisterActivity ap = new RegisterActivity();
+                //RegisterActivity ap = new RegisterActivity();
             }
         });
 
@@ -68,16 +68,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*
+
                 Intent i = new Intent(MainActivity.this, MainMenu.class);
                 Bundle send = new Bundle();
-                send.putLong("id", dbid);
-                send.putString("naam", CompanyNaam);
-                Intent intent = new Intent(this, NotificationReceiver.class);
-                intent.putExtras(send);
+                send.putInt("viewType", 1);
+                i.putExtras(send);
                 startActivity(i);
 
-*/
+
             }
         });
 

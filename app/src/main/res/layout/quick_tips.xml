@@ -21,4 +21,12 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Medical" />
+
+    <Button
+        android:id="@+id/quick_tips_zombies"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Zombies!" />
 </LinearLayout>

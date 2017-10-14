@@ -12,16 +12,21 @@ import android.widget.Button;
 
 public class QuickTips extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
-
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quick_tips);
         {
 
+
+                //CompanyNaam = receive.getString("naam");
+
             Button Qt = (Button) findViewById(R.id.quick_tips_quick_tips2);
             Button medical = (Button) findViewById(R.id.quick_tips_medical);
+            Button zombies = (Button) findViewById(R.id.quick_tips_zombies);
+
 
             Qt.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -37,6 +42,16 @@ public class QuickTips extends AppCompatActivity {
                 public void onClick(View v)
                 {
                     Intent i = new Intent(QuickTips.this, Medical.class);
+                    startActivity(i);
+                }
+            });
+
+
+            zombies.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent i = new Intent(QuickTips.this, Zombie.class);
                     startActivity(i);
                 }
             });
