@@ -55,6 +55,14 @@
         <activity android:name=".Zombie"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".SettingsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".ProvideAid"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

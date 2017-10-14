@@ -3,5 +3,15 @@
     <string name="radio_yes">Yes</string>
     <string name="radio_no">No</string>
 
+    <string-array name="time_intervals">
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Days</item>
+        <item>Months</item>
+    </string-array>
+
+
 
 </resources>

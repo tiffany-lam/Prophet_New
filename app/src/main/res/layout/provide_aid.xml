@@ -3,4 +3,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/provide_aid_received_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="These are the people you can help around you!"
+        android:textSize="20dp" />
+
+    <WebView
+        android:id="@+id/provide_aid_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

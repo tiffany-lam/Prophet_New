@@ -9,37 +9,53 @@
     tools:context="com.prophet.prophets.prophet.MainActivity">
 
 
+    <ImageView
+        android:id="@+id/main_activity_icon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@mipmap/ic_launcher" />
+
     <TextView
         android:id="@+id/wcm_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="75dp"
-        android:text="Hello World!" />
+        android:layout_marginTop="30dp"
+        android:text="Welcome!"
+        android:textColor="@color/PazOrange"
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/sign_up"
-        android:layout_width="88dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Sign Up" />
+        android:layout_marginTop="50dp"
+        android:background="@color/PazYellOrange"
+        android:text="Sign Up"
+        android:textColor="@color/PazWhite" />
 
     <Button
         android:id="@+id/login"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Log In" />
-
-    <Button
-        android:id="@+id/quick_tips"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Emergency" />
+        android:background="@color/PazYellOrange"
+        android:text="Log In"
+        android:textColor="@color/PazWhite" />
+
+    <Button
+        android:id="@+id/quick_tips"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/PazYellOrange"
+        android:text="Emergency"
+        android:textColor="@color/PazWhite" />
 
 
 </LinearLayout>

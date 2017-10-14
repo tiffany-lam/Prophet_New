@@ -85,6 +85,22 @@ public class MainMenu extends AppCompatActivity {
                 }
             });
 
+            Settings.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MainMenu.this, SettingsActivity.class);
+                    startActivity(i);
+                }
+            });
+
+            ProvideHelp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MainMenu.this, ProvideAid.class);
+                    startActivity(i);
+                }
+            });
+
 
             //http://www.google.com/maps/place/33.77579059,-118.17396795
 
