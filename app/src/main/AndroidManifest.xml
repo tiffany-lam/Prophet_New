@@ -16,17 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu">
-        </activity>
-
-        <activity android:name=".Medical">
-        </activity>
-
-        <activity android:name=".QuickTips">
-        </activity>
-
-        <activity android:name=".QuickTips2">
-        </activity>
+        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".Medical"></activity>
+        <activity android:name=".QuickTips"></activity>
+        <activity android:name=".QuickTips2"></activity>
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>
