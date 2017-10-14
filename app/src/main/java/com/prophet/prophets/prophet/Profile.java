@@ -7,14 +7,14 @@ package com.prophet.prophets.prophet;
 public class Profile {
     private int DBID;
     private String name;
-    private String familyMembers;
+    private String volunteer;
     private String skills;
     private String locations;
 
-    public Profile(int DBID, String name, String familyMembers, String skills, String locations){
+    public Profile(int DBID, String name, String volunteer, String skills, String locations){
         this.DBID = DBID;
         this.name = name;
-        this.familyMembers = familyMembers;
+        this.volunteer = volunteer;
         this.skills = skills;
         this.locations = locations;
     }
@@ -27,13 +27,13 @@ public class Profile {
         this.name = name;
     }
 
-    public String getFamilyMembers() {
+/*    public String getFamilyMembers() {
         return familyMembers;
     }
 
     public void setFamilyMembers(String familyMembers) {
         this.familyMembers = familyMembers;
-    }
+    }*/
 
     public String getSkills() {
         return skills;
