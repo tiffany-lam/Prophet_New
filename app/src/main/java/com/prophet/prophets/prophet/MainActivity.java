@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, MainMenu.class);
+                Intent i = new Intent(MainActivity.this, QuickTips.class);
                 startActivity(i);
 
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void msg(String x)
     {
-        Toast.makeText(this, x, Toast.LENGTH_SHORT);
+        Toast.makeText(MainActivity.this, x, Toast.LENGTH_SHORT);
 
     }
 }
