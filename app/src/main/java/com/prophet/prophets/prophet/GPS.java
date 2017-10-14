@@ -1,77 +1,51 @@
 package com.prophet.prophets.prophet;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by nicks on 10/14/2017.
+ */
+
+public class GPS extends AppCompatActivity implements LocationListener {
+    private String provider;
+    private LocationManager locationManager;
+    private Double lat, lon;
+    private Long time;
+    boolean isGPSEnabled = false;
+    boolean isNetworkEnabled = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
 
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //PAZZZZZZZZ
-        int App = 1;
+        setContentView(R.layout.main_menu);
 
-        Button LogIn = (Button) findViewById(R.id.login);
-        Button SignUp = (Button) findViewById(R.id.sign_up);
-        Button QuickTips = (Button) findViewById(R.id.quick_tips);
-
-        LogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                msg("You have pressed Log In!");
-
-            }
-        });
-
-        SignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(i);
-                RegisterActivity ap = new RegisterActivity();
-            }
-        });
-
-        QuickTips.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                /*
-                Intent i = new Intent(MainActivity.this, MainMenu.class);
-                Bundle send = new Bundle();
-                send.putLong("id", dbid);
-                send.putString("naam", CompanyNaam);
-                Intent intent = new Intent(this, NotificationReceiver.class);
-                intent.putExtras(send);
-                startActivity(i);
-
-*/
-            }
-        });
+        getLocation();
 
     }
 
-    private void msg(String x)
-    {
-        Toast.makeText(MainActivity.this, x, Toast.LENGTH_SHORT);
-
+    public void msg(String s) {
+        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
-}
 
-
-/*
-* *******************************************************
-*           GPS Function
-*
-* ************************************************************
-*     public void getLocation() {
+    public void getLocation() {
         //if(Global/Shared Preferences then)
         {
             locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -106,10 +80,21 @@ public class MainActivity extends AppCompatActivity {
             Location location;
 
             try {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
                 location = locationManager.getLastKnownLocation(provider);
                 lat = location.getLatitude();
                 lon = location.getLongitude();
-                msg("WE got something! \nLat=" + lat + "\nlon=" + lon);
+                time = location.getTime();
+                msg("WE got something! \nLat=" + lat + "\nlon=" + lon + "\ntime=" + time);
                 return;
             } catch (NullPointerException e) {
                 e.printStackTrace();
@@ -119,10 +104,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public Location getLastKnownLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return null;
+        }
+        return locationManager.getLastKnownLocation(provider);
+    }
+
     @Override
     public void onLocationChanged(Location location) {
         lat = location.getLatitude();
         lon = location.getLongitude();
+        time = location.getTime();
     }
 
     @Override
@@ -150,7 +143,8 @@ public class MainActivity extends AppCompatActivity {
             locationManager.removeUpdates(this);
         }
     }
-*
-*
-*
-* */
+
+    public Double getLat(){ return this.lat; }
+    public Double getLon(){ return this.lon; }
+    public Long getTime(){ return this.time; }
+}
