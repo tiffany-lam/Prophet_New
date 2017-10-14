@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context="com.prophet.prophets.prophet.RegisterActivity"
     android:orientation="vertical">
 
@@ -16,14 +16,14 @@
         android:hint="Enter your name"
         android:inputType="textPersonName" />
 
-    <EditText
+ <!--   <EditText
         android:id="@+id/familymembersEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Enter your family members"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName" />-->
 
     <EditText
         android:id="@+id/skillsEditText"
@@ -47,9 +47,39 @@
         android:minLines="2"
         android:singleLine="false" />
 
+    <TextView
+        android:id="@+id/volunteerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Do you want to volunteer?">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radioChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_yes" />
+
+        <RadioButton
+            android:id="@+id/radioNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_no" />
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register" />
+
 </LinearLayout>

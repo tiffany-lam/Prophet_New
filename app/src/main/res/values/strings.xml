@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Prophet</string>
+    <string name="radio_yes">Yes</string>
+    <string name="radio_no">No</string>
+
+
 </resources>
