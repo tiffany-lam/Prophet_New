@@ -23,7 +23,7 @@ public class MainMenu extends AppCompatActivity {
         Qt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainMenu.this, QuickTips2.class);
+                Intent i = new Intent(MainMenu.this, QuickTips.class);
                 startActivity(i);
             }
         });
