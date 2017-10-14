@@ -1,7 +1,10 @@
 package com.prophet.prophets.prophet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by Paz_X on 10/13/2017.
@@ -15,6 +18,15 @@ public class MainMenu extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
+
+        Button Qt = (Button) findViewById(R.id.main_menu_quick_tips);
+        Qt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainMenu.this, QuickTips2.class);
+                startActivity(i);
+            }
+        });
 
     }
 }
