@@ -42,10 +42,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MainActivity.this, QuickTips.class);
+                /*
+                Intent i = new Intent(MainActivity.this, MainMenu.class);
+                Bundle send = new Bundle();
+                send.putLong("id", dbid);
+                send.putString("naam", CompanyNaam);
+                Intent intent = new Intent(this, NotificationReceiver.class);
+                intent.putExtras(send);
                 startActivity(i);
 
-
+*/
             }
         });
 
@@ -57,3 +63,93 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+
+/*
+* *******************************************************
+*           GPS Function
+*
+* ************************************************************
+*     public void getLocation() {
+        //if(Global/Shared Preferences then)
+        {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            try {
+                isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            } catch (Exception ex) {
+                msg("GPS is disabled ='(");
+            }
+
+            try {
+                isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+            } catch (Exception ex) {
+                msg("Network is Unavailable ='(");
+            }
+
+            if (!isGPSEnabled) {
+                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                msg("Please Enable GPS");
+                startActivity(intent);
+            }
+
+            if (!isNetworkEnabled) {
+                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                msg("Please Enable Network");
+                startActivity(intent);
+            }
+            // Get the location manager
+
+            Criteria criteria = new Criteria();
+            //LocationListener ll =
+            provider = locationManager.getBestProvider(criteria, false);
+            Location location;
+
+            try {
+                location = locationManager.getLastKnownLocation(provider);
+                lat = location.getLatitude();
+                lon = location.getLongitude();
+                msg("WE got something! \nLat=" + lat + "\nlon=" + lon);
+                return;
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+                msg("Ooops something went terribly wrong with GPS");
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        lat = location.getLatitude();
+        lon = location.getLongitude();
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+        Toast.makeText(this, "Enabled new provider " + provider,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+        Toast.makeText(this, "Disabled provider " + provider,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(locationManager !=null)
+        {
+            locationManager.removeUpdates(this);
+        }
+    }
+*
+*
+*
+* */

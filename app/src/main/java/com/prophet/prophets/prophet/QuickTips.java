@@ -27,7 +27,7 @@ public class QuickTips extends AppCompatActivity {
                 @Override
                 public void onClick(View v)
                 {
-                    Intent i = new Intent(QuickTips.this, MainMenu.class);
+                    Intent i = new Intent(QuickTips.this, QuickTips2.class);
                     startActivity(i);
                 }
             });
